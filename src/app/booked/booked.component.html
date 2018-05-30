@@ -1,0 +1,46 @@
+<div class="row responsiveWidth">
+  <div class="col-sm-12 shadow-sm p-5 mb-4 bg-white text-dark">
+    <h3 class="text-center">
+      <strong>Booked Seats</strong>
+    </h3>
+    <table class="table table-borderless table-hover table-success px-5" *ngIf="personDetail.bStatus">
+      <tbody>
+          <tr class="text">
+              <td >
+                Name: 
+              </td>
+            <td >
+              {{personDetail.name}}
+            </td>
+          </tr>
+            <tr class="text">
+              <td >
+                  Email: 
+              </td>
+            <td >
+              {{personDetail.email}}
+            </td>
+          </tr>
+          <tr class="text">
+            <td >
+                Seats: 
+            </td>
+          <td >
+            {{personDetail.seats}}
+        </tr>
+        <tr class="text">
+            <td >
+                Available: 
+            </td>
+          <td >
+            {{(personDetail.total - personDetail.unAvailable)-(personDetail.seats)}}/{{personDetail.total}}
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="row responsiveWidth">
+    <div class="col-sm-12">
+        <app-live-seats></app-live-seats>
+    </div>
+</div>

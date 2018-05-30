@@ -1,0 +1,36 @@
+input.ng-invalid.ng-touched{
+    border-left: 10px solid red; 
+}
+  
+
+input.ng-valid.ng-touched{
+    border-left: 10px solid greenyellow; 
+}
+  
+
+
+@media(min-width: 576px){
+    .responsiveWidth{
+        margin: auto;
+        width:80%;
+    }
+}
+@media(min-width: 776px){
+    .responsiveWidth{
+        margin: auto;
+        width:70%;
+    }
+}
+@media(min-width: 992px){
+    .responsiveWidth{
+        margin: auto;
+        width:50%;
+    }
+}
+
+@media(min-width: 1200px){
+    .responsiveWidth{
+        margin: auto;
+        width:40%;
+    }
+}

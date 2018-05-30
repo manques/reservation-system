@@ -1,0 +1,58 @@
+/* Info */
+
+
+.infoType{
+    display:flex;
+    justify-content:center;
+}
+.info{
+    display: flex;
+    justify-content:center;
+    flex-flow: column;
+}
+.info-box{
+    width:30px;
+    height: 30px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.liveSeats{
+    background-color: pink;
+}
+.allSheats ul{
+    padding:10px;
+    margin:0px;
+    box-sizing: border-box; 
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.allSheats li{
+    box-sizing: border-box; 
+    width:20px;
+    height: 20px;
+    background-color: whitesmoke;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 5px;
+    font-size: 10px;
+}
+.allSheats li:hover{
+    background-color: lightgrey;
+}
+@media(min-width: 576px){
+    .allSheats li{
+        width:40px;
+        height: 40px;
+        background-color: whitesmoke;
+        margin: 5px;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 10px;
+    }
+}
+

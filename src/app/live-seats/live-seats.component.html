@@ -1,0 +1,34 @@
+<div class="row liveSeats p-2">
+
+  <div class="col">
+    <div class="row infoType">
+      <div class="col info">
+          <div class="info-box bg-light"></div>
+          <div>Avaiable</div>
+      </div>
+      <div class="col info">
+          <div class="info-box bg-success"></div> 
+          <div>Selected</div>
+      </div>
+      <div class="col info">
+          <div class="info-box bg-danger"></div> 
+          <div>Unavaiable</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col allSheats">
+    <!--  ROw -->
+    <div class="row">
+        <div class="col">
+          <ul *ngFor="let i of rows">
+            <li *ngFor="let j of cols" >
+              <div *ngIf="(x[i][j].seatNumber) !== -1">
+                {{x[i][j].seatNumber}}
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</div>
