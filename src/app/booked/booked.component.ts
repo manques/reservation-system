@@ -28,19 +28,19 @@ export class BookedComponent implements OnInit {
 
   showSubmit(){
     
-    this.personDetail.name = '';
-    this.personDetail.email = '';
-    this.personDetail.seats=  0;
-    this.personDetail.terms = false;
-    this.personDetail.bStatus = false;
-    this.personDetail.unAvailable = 0;
-    this.personDetail.total = 80;
+      this.personDetail.name = '';
+      this.personDetail.email = '';
+      this.personDetail.seats =  0;
+      this.personDetail.terms = false;
+      this.personDetail.bStatus = false;
+      this.personDetail.unAvailable = 0;
+      this.personDetail.total = 80;
   
-    this.personDetail.bStatus = this.bs.getCurrentSubmit().bStatus;
-    if(this.personDetail.bStatus){
-        this.personDetail = this.bs.getCurrentSubmit();
-        //console.log(this.personDetail);
-       }
+      // this.personDetail.bStatus = this.bs.getCurrentSubmit().bStatus;
+      if(this.bs.getCurrentSubmit().bStatus != undefined){
+          this.personDetail = this.bs.getCurrentSubmit();
+          //console.log(this.personDetail);
+      }
   
   }
 }

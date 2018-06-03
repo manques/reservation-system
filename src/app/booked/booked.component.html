@@ -1,4 +1,4 @@
-<div class="row responsiveWidth">
+<div *ngIf="personDetail.bStatus" class="row responsiveWidth">
   <div class="col-sm-12 shadow-sm p-5 mb-4 bg-white text-dark">
     <h3 class="text-center">
       <strong>Booked Seats</strong>
@@ -39,8 +39,16 @@
     </table>
   </div>
 </div>
-<div class="row responsiveWidth">
+<div *ngIf="personDetail.bStatus" class="row responsiveWidth">
     <div class="col-sm-12">
         <app-live-seats></app-live-seats>
+    </div>
+</div>
+
+<div *ngIf="!personDetail.bStatus" class="row responsiveWidth">
+    <div class="col-sm-12 p-5">
+        <h2 class="d-flex justify-content-center bg-warning">
+         <strong> Please go to Login !!!</strong>
+        </h2>
     </div>
 </div>

@@ -22,7 +22,7 @@ export class LiveSeatsComponent implements OnInit {
       this.x[i] = new Array(7);
     }
     this.x = this.ss.getSeatsDesign();
-    //console.log(this.x);
+    console.log(this.x[1][2].seatNumber);
   
   }
 

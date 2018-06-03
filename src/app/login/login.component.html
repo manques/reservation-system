@@ -1,3 +1,4 @@
+<h2 class="d-flex justify-content-center p-2"><strong>{{title}}</strong></h2>
 <div class="container   responsiveWidth">
   <div class="row">
      <div class="col-sm-12 shadow-sm p-5 mb-4 bg-white">
@@ -65,34 +66,33 @@
             </div>
           <button type="button" 
                   class="btn btn-primary mt-2 px-5 py-2"
-                  [disabled]="!bookingForm.valid"
+                  [disabled]="(!bookingForm.valid) || (available < (bookingForm.value.seats))"
                   routerLink="booked"
                   (click)="onSubmit()"
                   >Submit</button>
         </form>
+          <p *ngIf="available < (bookingForm.value.seats)"   class="alert alert-danger">
+                  Sorry !! Available seats : {{available}}
+          </p>
+        <!-- <span>{{available}}</span><
+        <span>{{bookingForm.value.seats}}</span>=
+        <span>{{(available <= (bookingForm.value.seats))}}</span> -->
      </div>
   </div>
   <div class="row">
     <div class="col-sm-12 shadow-sm p-5 mb-4 bg-white text-dark">
       <h3 class="text-center">
-        <strong>Booked Seats</strong>
+        <strong>Summary({{available}}/80)</strong>
       </h3>
-      <table class="table table-borderless table-hover table-success px-5">
+      <table class="table table-borderless table-hover table-striped  p-2 table-responsive">
+        <thead class="thead-dark">
+            <tr>
+              <th>Name</th>
+              <th>Eamil</th>
+              <th>Seats</th>
+            </tr>
+          </thead>
         <tbody>
-          <tr>
-            <td>Name: {{bookingForm.value.name}}</td>
-          </tr>
-          <tr>
-              <td>Email: {{bookingForm.value.email}}</td>
-          </tr>
-          <tr>
-              <td>Seats: {{bookingForm.value.seats}}</td>
-          </tr>
-         
-          <tr>
-            <td>{{persons | json}}</td>
-          </tr>
-
           <tr class="text" *ngFor="let item of items | async">
             <td >
               {{item.name}}
@@ -103,12 +103,10 @@
             <td >
               {{item.seats}}
             </td>
-            <td >
-              {{item.terms}}
-            </td>
           </tr>
         </tbody>
       </table>
+      
     </div>
   </div>
 </div>

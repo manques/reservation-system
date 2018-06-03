@@ -7,7 +7,7 @@ import { Number } from '../model/number';
 @Injectable({
   providedIn: 'root'
 })
-export class SeatsService {
+export class Test {
     bookingStatus: BookedStatus;
     seats: number;
     constructor(private bs: BookingService) { }
@@ -27,12 +27,7 @@ export class SeatsService {
         for (var i = 0; i < 12; i++) {
             for (var j = 0; j < 7; j++) {
                 if(counter <= 80){
-                    let seatProp = {seatNumber : counter++, isAvailable: true} ;
-                    x[i][j] = seatProp;
-                }
-                else{
-                    let seatProp = {seatNumber : -1, isAvailable: false} ;
-                    x[i][j] = seatProp;
+                    x[i][j] = {seatNumber : counter++, isAvailable: true} ;
                 }
             }
         }
